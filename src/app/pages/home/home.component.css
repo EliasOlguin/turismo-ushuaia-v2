@@ -1,0 +1,11 @@
+.home img {
+  background-size: cover;
+}
+.home {
+  text-align: center;
+}
+.home h1 {
+  background: radial-gradient(#7ebfe8 0, #2090c5 50%, #0064a3 100%);
+  border-radius: 40px;
+  margin: 10px;
+}

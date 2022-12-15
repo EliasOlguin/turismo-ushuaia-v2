@@ -1,0 +1,17 @@
+@media (max-width: 375px) {
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: x-small !important;
+    align-items: center;
+  }
+}
+.menu {
+  background-image: radial-gradient(
+    circle at 50% -3.03%,
+    #7ebfe8 0,
+    #2090c5 50%,
+    #0064a3 100%
+  );
+}
