@@ -9,6 +9,8 @@ import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NavBarModule } from './pages/nav-bar/nav-bar.module';
+import { LoginComponent } from './pages/login/login.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NavBarModule } from './pages/nav-bar/nav-bar.module';
     NavBarComponent,
     HomeComponent,
     PageNotFoundComponent,
+    LoginComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
