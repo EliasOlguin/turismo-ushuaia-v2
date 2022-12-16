@@ -1,0 +1,18 @@
+.contenedor-footer{
+    background: #767272;
+    display: flex;
+    justify-content: space-evenly;
+}
+.color{
+    color: #f8f9fa;
+}
+.dato-contac{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.dato-contac .mat-icon{
+    width: 49px;
+    height: auto;
+    font-size: 30px;
+}

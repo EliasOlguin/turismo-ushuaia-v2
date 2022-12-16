@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { NavBarModule } from './pages/nav-bar/nav-bar.module';
 import { LoginComponent } from './pages/login/login.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { LoginModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,6 @@ import { FooterComponent } from './pages/footer/footer.component';
     NavBarComponent,
     HomeComponent,
     PageNotFoundComponent,
-    LoginComponent,
     FooterComponent,
   ],
   imports: [
@@ -26,6 +26,7 @@ import { FooterComponent } from './pages/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent],

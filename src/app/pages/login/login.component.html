@@ -1,14 +1,49 @@
 <div class="container-login">
     <mat-card class="example-card">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>Mi Cuenta</mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
         </mat-card-header>
         <mat-card-content>
             <mat-tab-group animationDuration="0ms">
-                <mat-tab label="first">
-                    <!-- <div class="container"> -->
+                <mat-tab label="Iniciar Sesión">
+                    <div class="container p-2">
+                        <form (submit)="login()" [formGroup]="loginForm">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input type="email" formControlName="email" matInput required placeholder="Ex. pat@example.com" >
+                                <mat-error *ngIf="loginForm?.get('email')?.errors?.['required']"> Se requiere su email</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput 
+                                    formControlName="password"
+                                    placeholder="Password" 
+                                    [type]="hide ? 'password' : 'text'">
+                                    <button mat-icon-button matSuffix  (click)="hide = !hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}} </mat-icon>
+                                    </button>
+                                    <mat-error *ngIf="loginForm?.get('password')?.errors?.['required']"> Se requiere su contraseña</mat-error>
+                            </mat-form-field>
+                            <button mat-raised-button required color="primary"  class="col-12">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Registrarme">
+                    <div class="container p-2">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Nombre</mat-label>
+                            <input type="text" matInput placeholder="Nombre" >
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Apellido</mat-label>
+                            <input type="text" matInput placeholder="Apellido" >
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Teléfono</mat-label>
+                            <input type="text" matInput placeholder="Teléfono" >
+                        </mat-form-field>
                         <mat-form-field class="example-full-width">
                             <mat-label>Email</mat-label>
                             <input type="email" matInput
@@ -19,20 +54,8 @@
                             <mat-label>Password</mat-label>
                             <input type="password" matInput placeholder="Password" >
                         </mat-form-field>
-                        <button mat-button color="primary">Primary</button>
-                    <!-- </div> -->
-                </mat-tab>
-                <mat-tab label="second">
-                    <div class="container">
-                        <!-- <mat-form-field class="example-full-width">
-                            <mat-label>Email</mat-label>
-                            <input type="email" matInput placeholder="Email" >
-                        </mat-form-field>
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Password</mat-label>
-                            <input type="password" matInput placeholder="Password" >
-                        </mat-form-field>
-                        <button mat-button color="primary">Primary</button> -->
+                
+                        <button mat-raised-button color="primary" class="col-12">Registrarme</button>
                     </div>
                 </mat-tab>
             </mat-tab-group>
