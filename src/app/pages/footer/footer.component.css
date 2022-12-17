@@ -3,16 +3,33 @@
     display: flex;
     justify-content: space-evenly;
 }
-.color{
+h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+h2,a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+}
+h1, h2, a, mat-icon{
     color: #f8f9fa;
 }
-.dato-contac{
+.datos-contacto{
     display: flex;
-    align-items: center;
+    flex-direction: row;
     flex-wrap: nowrap;
 }
-.dato-contac .mat-icon{
-    width: 49px;
-    height: auto;
-    font-size: 30px;
+.datos-contacto .iconos{
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.datos-contac h2{
+    height: 70px;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
 }

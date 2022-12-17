@@ -1,6 +1,6 @@
 import { IRol } from "./IRol"
 
-export interface IUser{
+export interface IUsuario{
     nombre:string,
     apellido:string,
     email:string,

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import { NavBarModule } from './pages/nav-bar/nav-bar.module';
 import { LoginComponent } from './pages/login/login.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { LoginModule } from './pages/login/login.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AdministradorModule } from './pages/administrador/administrador.module';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,12 @@ import { LoginModule } from './pages/login/login.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    LoginModule
+    LoginModule,
+    HttpClientModule,
+    AdministradorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
