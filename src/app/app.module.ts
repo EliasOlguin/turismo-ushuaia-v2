@@ -22,6 +22,7 @@ import { AdministradorModule } from './pages/administrador/administrador.module'
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
+    
   ],
   imports: [
     BrowserModule,

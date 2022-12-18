@@ -1,50 +1,69 @@
-.container-administrador{
+.container-administrador {
     height: 100%;
     padding: 0px;
     display: flex;
 }
-.container-menu{
+
+.container-menu {
     height: 100%;
-    background-color: azure;
+    background-color: white;
 }
-.container-datos{
-    background-color: #6c757d33;
+
+.container-datos {
+    background-color: #b0b1b945;
 }
-.container-usuario h1{
+
+.container-usuario h1 {
     font-size: 22px;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-weight: 900;
     padding: 32px 0px;
 }
-.container-etiquetas li{
+
+.container-etiquetas li {
     display: flex;
     width: 100%;
     align-items: center;
 }
-.container-etiquetas li a{
+
+.container-etiquetas li a,
+.container-salir a {
     padding: 0px 10px;
 }
-.container-etiquetas li h2{
+
+.container-etiquetas li h2 {
     padding: 0px 10px;
 }
-.container-menu .container-etiquetas li{
-    background-color: aqua;
+
+a {
+    color: #000;
+    display: block;
+}
+
+.container-etiquetas .color-boton:hover , .container-salir:hover {
+    background-color: rgba(19, 182, 191, 0.674);
+    /* display: block; */
+    text-decoration-line: none;
+}
+.container-etiquetas .color-boton:active , .container-salir:active{
+    background-color: rgba(19, 182, 191, 0.674);
+}
+
+.container-menu .container-etiquetas li,
+.container-salir {
+    /* background-color: aqua; */
     padding: 15px 10px;
 }
-/* CONTENEDOR DATOS */
-.container-cards{
-    padding: 20px;
+
+.container-salir {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.container-salir a {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    align-items: center;
 }
-.card {
-    max-width: 400px;
-    margin:10px;
-    padding: 20px;
-  }
-.card .dato-card{
-    font-size: 35px;
-    font-weight: 800;
-}
+

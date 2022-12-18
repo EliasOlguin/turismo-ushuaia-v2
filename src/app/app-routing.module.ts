@@ -12,8 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'mi-cuenta',
-    component: AdministradorComponent,
-    // component: LoginComponent,
+    // component: AdministradorComponent,
+    component: LoginComponent,
   },
   {
     path: '',
