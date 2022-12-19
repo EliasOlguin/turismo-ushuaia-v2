@@ -4,6 +4,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomeComponent } from './pages/home/home.component';
 import { ExcursionesComponent } from './pages/excursiones/excursiones.component';
 import { ContainerAppComponent } from './pages/container-app/container-app.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,11 @@ const routes: Routes = [
           ),
       },
     ],
+  },
+  {
+    path: 'mi-cuenta',
+    // component: AdministradorComponent,
+    component: LoginComponent,
   },
   {
     path: '',

@@ -1,0 +1,33 @@
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+mat-card-title{
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+.example-card {
+  max-width: 400px;
+}
+.mat-mdc-card-header {
+  display: flex;
+  padding: 16px 16px;
+  justify-content: center;
+}
+.mat-mdc-tab-body-content {
+  height: 100%;
+  overflow: hidden;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
