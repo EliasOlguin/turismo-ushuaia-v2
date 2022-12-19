@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #f1faff;
+}
+.container_card{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card_father{
+    margin: 20px;
+    perspective: 1000px;
+}

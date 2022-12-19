@@ -1,1 +1,9 @@
-<p>excursiones works!</p>
+<div>
+  <ng-container *ngFor="let excursion of excursiones; let i = index">
+    <div class="container_card">
+      <div class="card_father">
+        <app-excursiones-card [excursion]="excursion"></app-excursiones-card>
+      </div>
+    </div>
+  </ng-container>
+</div>
