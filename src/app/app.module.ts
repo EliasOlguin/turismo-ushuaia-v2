@@ -9,6 +9,8 @@ import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NavBarModule } from './pages/nav-bar/nav-bar.module';
+import { ContainerAppComponent } from './pages/container-app/container-app.component';
+import { ExcursionesComponent } from './pages/excursiones/excursiones.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { LoginModule } from './pages/login/login.module';
@@ -19,10 +21,9 @@ import { AdministradorModule } from './pages/administrador/administrador.module'
   declarations: [
     AppComponent,
     NavBarComponent,
-    HomeComponent,
     PageNotFoundComponent,
+    ContainerAppComponent,
     FooterComponent,
-    
   ],
   imports: [
     BrowserModule,

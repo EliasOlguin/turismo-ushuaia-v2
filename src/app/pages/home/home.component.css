@@ -1,11 +1,68 @@
-.home img {
+/* .home-img {
+  background-image: url("../../../assets/home/turismo-ushuaia1.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 .home {
+  width: 100%;
+  height: max-content;
   text-align: center;
+  overflow: hidden;
 }
 .home h1 {
   background: radial-gradient(#7ebfe8 0, #2090c5 50%, #0064a3 100%);
   border-radius: 40px;
   margin: 10px;
+}
+.home img {
+  width: 100%;
+}
+.home ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+
+  animation: cambio 20s infinite alternate;
+}
+.home li {
+  width: 100%;
+  list-style: none;
+}
+@keyframes cambio {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
+@media (min-width: 376px) {
+  .home h1 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .home h1 {
+    font-size: 30px;
+  }
 }

@@ -1,11 +1,9 @@
-@media (max-width: 375px) {
-  .menu-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: x-small !important;
-    align-items: center;
-  }
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: x-small;
+  align-items: center;
 }
 .menu {
   background-image: radial-gradient(
@@ -14,6 +12,23 @@
     #2090c5 50%,
     #0064a3 100%
   );
+  width: 100%;
+}
+@media (min-width: 376px) {
+  .menu-item {
+    font-size: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .menu-item {
+    font-size: 30px;
+  }
+  .menu-item-icon {
+    visibility: hidden;
+  }
+  .menu {
+    padding-bottom: 20px;
+  }
 }
 .p{
   height: 20%;
