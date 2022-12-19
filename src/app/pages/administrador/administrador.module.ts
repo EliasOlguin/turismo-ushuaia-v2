@@ -8,13 +8,14 @@ import { ProductosInfoComponent } from './productos-info/productos-info.componen
 import { ProductoFormComponent } from './productos-info/producto-form/producto-form.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdministradorRoutingModule } from './administrador-routing.module';
+import { HomeAdministradorComponent } from './home-administrador/home-administrador.component';
 
 
 @NgModule({
   declarations: [
     AdministradorComponent,
-    HomeComponent,
-    // ExcursionesInfoComponent,
+    HomeAdministradorComponent,
     ProductosInfoComponent,
     ProductoFormComponent
   ],
@@ -24,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule,    
+    ReactiveFormsModule,
+    AdministradorRoutingModule 
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

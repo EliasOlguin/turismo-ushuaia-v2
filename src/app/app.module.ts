@@ -32,7 +32,7 @@ import { AdministradorModule } from './pages/administrador/administrador.module'
     MaterialModule,
     LoginModule,
     HttpClientModule,
-    AdministradorModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
