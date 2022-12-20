@@ -6,6 +6,7 @@ import { ExcursionesComponent } from './pages/excursiones/excursiones.component'
 import { ContainerAppComponent } from './pages/container-app/container-app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { ProductoDetalleComponent } from './pages/producto-detalle/producto-detalle.component';
 import { ProductosInfoComponent } from './pages/administrador/productos-info/productos-info.component';
 import { HomeAdministradorComponent } from './pages/administrador/home-administrador/home-administrador.component';
 import { UsuariosInfoComponent } from './pages/administrador/usuarios-info/usuarios-info.component';
@@ -27,6 +28,14 @@ const routes: Routes = [
         loadChildren: () =>
           import('./pages/excursiones/excursiones.module').then(
             (m) => m.ExcursionesModule
+          ),
+      },
+      {
+        path: 'producto/detalles/:id',
+        component: ProductoDetalleComponent,
+        loadChildren: () =>
+          import('./pages/producto-detalle/producto-detalle.module').then(
+            (m) => m.ProductoDetalleModule
           ),
       },
       {
@@ -64,7 +73,6 @@ const routes: Routes = [
         component: HomeAdministradorComponent,
         loadChildren: () =>
         import('./pages/administrador/home-administrador/home-administrador.module').then((m)=>m.HomeAdministradorModule)
-      
       },
     ],
   },

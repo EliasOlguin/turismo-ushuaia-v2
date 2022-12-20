@@ -5,6 +5,7 @@
   transform-style: preserve-3d;
   transition: all 600ms;
   margin: 20px;
+  border-radius: 20px;
 }
 .card_front,
 .card_back {

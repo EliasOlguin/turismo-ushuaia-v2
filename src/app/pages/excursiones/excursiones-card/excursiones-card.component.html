@@ -10,7 +10,7 @@
                 <div class="body_card_back">
                     <h1>{{excursion.nombre}}</h1>
                     <p>{{excursion.descripcion}}</p>
-                    <button mat-raised-button color="primary">Ver más...</button>
+                    <button mat-raised-button color="primary" (click)="onDetail(excursion.id)">Ver más...</button>
                 </div>
             </div>
         </div>

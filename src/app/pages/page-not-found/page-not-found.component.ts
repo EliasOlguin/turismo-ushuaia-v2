@@ -15,7 +15,15 @@ export class PageNotFoundComponent implements OnInit {
   clase: string;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pageX = window.innerWidth;
+    this.pageY = window.innerHeight;
+  }
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.pageX = window.innerWidth;
+    this.pageY = window.innerHeight;
+  }
   @HostListener('document:mousemove', ['$event'])
   getMove(e: any) {
     console.log(e);
