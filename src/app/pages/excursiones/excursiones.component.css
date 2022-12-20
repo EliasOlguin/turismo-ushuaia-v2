@@ -1,19 +1,21 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    background: #f1faff;
+body {
+  background: #f1faff;
 }
-.container_card{
-    max-width: 1200px;
-    margin: auto;
-    margin-top: 50px;
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.container_card {
+  max-width: 2000px;
+  margin: 0 20px 20px 20px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.card_father{
-    margin: 20px;
-    perspective: 1000px;
+.card_father {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px 20px 20px;
+  justify-content: space-evenly;
+  perspective: 1000px;
 }
