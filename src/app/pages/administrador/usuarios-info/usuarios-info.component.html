@@ -2,7 +2,7 @@
 <div class="container-datos">
 
     <button mat-raised-button color="primary" class="boton-agregar px-3" (click)="openDialog()">
-      Agregar Excursión</button>
+      Agregar Usuario</button>
     
     <div class="example-container mat-elevation-z8  ">
   
@@ -19,16 +19,32 @@
           matSortDisableClear matSortDirection="desc">
           <!-- Number Column -->
           <ng-container matColumnDef="nombre">
-            <th mat-header-cell *matHeaderCellDef>#</th>
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
             <td mat-cell *matCellDef="let row">{{row.nombre}}</td>
           </ng-container>
   
           <!-- Title Column -->
-          <ng-container matColumnDef="detalle">
-            <th mat-header-cell *matHeaderCellDef>Title</th>
-            <td mat-cell *matCellDef="let row">{{row.detalle}}</td>
+          <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef>Apellido</th>
+            <td mat-cell *matCellDef="let row">{{row.apellido}}</td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="telefono">
+            <th mat-header-cell *matHeaderCellDef>Telefono</th>
+            <td mat-cell *matCellDef="let row">{{row.telefono}}</td>
           </ng-container>
   
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let row">{{row.email}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="rol">
+            <th mat-header-cell *matHeaderCellDef>Rol</th>
+            <td mat-cell *matCellDef="let row">{{row.rol}}</td>
+          </ng-container>
+
           State Column
           <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef></th>
