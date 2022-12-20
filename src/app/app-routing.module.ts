@@ -6,6 +6,7 @@ import { ExcursionesComponent } from './pages/excursiones/excursiones.component'
 import { ContainerAppComponent } from './pages/container-app/container-app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { ProductoDetalleComponent } from './pages/producto-detalle/producto-detalle.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,14 @@ const routes: Routes = [
         loadChildren: () =>
           import('./pages/excursiones/excursiones.module').then(
             (m) => m.ExcursionesModule
+          ),
+      },
+      {
+        path: 'producto/detalles/:id',
+        component: ProductoDetalleComponent,
+        loadChildren: () =>
+          import('./pages/producto-detalle/producto-detalle.module').then(
+            (m) => m.ProductoDetalleModule
           ),
       },
     ],
