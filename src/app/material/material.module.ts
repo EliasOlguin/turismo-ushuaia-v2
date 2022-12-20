@@ -13,7 +13,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatSelectModule} from '@angular/material/select';
 
 const Material = [
   MatToolbarModule, 
@@ -28,7 +28,8 @@ const Material = [
   MatPaginatorModule,
   MatDialogModule,
   FormsModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatSelectModule
 ];
 
 @NgModule({

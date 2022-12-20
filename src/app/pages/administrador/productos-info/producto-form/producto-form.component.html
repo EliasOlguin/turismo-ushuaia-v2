@@ -7,62 +7,75 @@
     <div class="container-form py-3">
 
         <form [formGroup]="productoForm" (submit)="agregarProducto()">
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Nombre</mat-label>
-                <input type="nombre" formControlName="nombre" matInput required placeholder="Nombre">
-                <mat-error *ngIf="productoForm?.get('nombre')?.errors?.['required']"> Se requiere el
-                    nombre</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Detalle</mat-label>
-                <input type="detalle" matInput formControlName="detalle" placeholder="Detalle">
-                <mat-error *ngIf="productoForm?.get('detalle')?.errors?.['required']"> Se requiere un
-                    detalle</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Descripción</mat-label>
-                <input type="descripcion" matInput formControlName="descripcion" placeholder="Descripción">
-                <mat-error *ngIf="productoForm?.get('descripcion')?.errors?.['required']"> Se requiere una
-                    descripción</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Tipo</mat-label>
-                <input type="tipo" matInput formControlName="tipo" placeholder="Tipo">
-                <mat-error *ngIf="productoForm?.get('tipo')?.errors?.['required']"> Se requiere un
-                    tipo</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Precio</mat-label>
-                <input type="precio" matInput formControlName="precio" placeholder="Precio">
-                <mat-error *ngIf="productoForm?.get('precio')?.errors?.['required']"> Se requiere un
-                    precio</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Cantidad de personas</mat-label>
-                <input type="cantidadPersonas" matInput formControlName="cantidadPersonas" placeholder="Cantidad de personas">
-                <mat-error *ngIf="productoForm?.get('cantidadPersonas')?.errors?.['required']"> Se requiere una
-                    cantidad de personas</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Dificultad</mat-label>
-                <input type="dificultad" matInput formControlName="dificultad" placeholder="Dificultad">
-                <mat-error *ngIf="productoForm?.get('dificultad')?.errors?.['required']"> Se requiere una
-                    dificultad</mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mx-3">
-                <mat-label>Horarios disponibles</mat-label>
-                <input type="horariosDisponibles" matInput formControlName="horariosDisponibles" placeholder="">
-                <mat-error *ngIf="productoForm?.get('horariosDisponibles')?.errors?.['required']"> Se requiere una
-                    dificultad</mat-error>
-            </mat-form-field>
-            <!-- <mat-form-field class="example-full-width mx-3">
-                <mat-label>Fotos</mat-label>
-                <input type="horariosDisponibles" matInput formControlName="horariosDisponibles" placeholder="">
-                <mat-error *ngIf="productoForm?.get('horariosDisponibles')?.errors?.['required']"> Se requiere una
-                    dificultad</mat-error>
-            </mat-form-field> -->
+            <div class="container-form-datos col-12 p-0">
+                <mat-form-field class="example-full-width  col-xs-12 col-md-6">
+                    <mat-label>Nombre</mat-label>
+                    <input type="nombre" formControlName="nombre" matInput required placeholder="Nombre">
+                    <mat-error *ngIf="productoForm?.get('nombre')?.errors?.['required']"> Se requiere el
+                        nombre</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Detalle</mat-label>
+                    <input type="detalle" matInput formControlName="detalle" placeholder="Detalle">
+                    <mat-error *ngIf="productoForm?.get('detalle')?.errors?.['required']"> Se requiere un
+                        detalle</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Descripción</mat-label>
+                    <input type="descripcion" matInput formControlName="descripcion" placeholder="Descripción">
+                    <mat-error *ngIf="productoForm?.get('descripcion')?.errors?.['required']"> Se requiere una
+                        descripción</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Tipo</mat-label>
+                    <input type="tipo" matInput formControlName="tipo" placeholder="Tipo">
+                    <mat-error *ngIf="productoForm?.get('tipo')?.errors?.['required']"> Se requiere un
+                        tipo</mat-error>
+                </mat-form-field><mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Cantidad de personas</mat-label>
+                    <input type="cantidadPersonas" matInput formControlName="cantidadPersonas"
+                        placeholder="Cantidad de personas">
+                    <mat-error *ngIf="productoForm?.get('cantidadPersonas')?.errors?.['required']"> Se requiere una
+                        cantidad de personas</mat-error>
+                </mat-form-field>
 
-        </form>
+                <!-- </div> -->
+                <!-- <div class="container-form-datos"> -->
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Precio</mat-label>
+                    <input type="precio" matInput formControlName="precio" placeholder="Precio">
+                    <mat-error *ngIf="productoForm?.get('precio')?.errors?.['required']"> Se requiere un
+                        precio</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Horarios Disponibles</mat-label>
+                    <mat-select formControlName="horarios" multiple>
+                      <mat-option *ngFor="let hora of horarios" [value]="hora">{{hora}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            
+
+
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Dificultad</mat-label>
+                    <input type="dificultad" matInput formControlName="dificultad" placeholder="Dificultad">
+                    <mat-error *ngIf="productoForm?.get('dificultad')?.errors?.['required']"> Se requiere una
+                        dificultad</mat-error>
+                </mat-form-field>
+
+                
+                <!-- <mat-form-field class="example-full-width mx-3">
+                    <mat-label>Fotos</mat-label>
+                    <input type="horariosDisponibles" matInput formControlName="horariosDisponibles" placeholder="">
+                    <mat-error *ngIf="productoForm?.get('horariosDisponibles')?.errors?.['required']"> Se requiere una
+                        dificultad</mat-error>
+                    </mat-form-field> -->
+                </div>
+            </form>
+            <!-- <mat-form-field class="example-full-width col-xs-12 col-md-6"> -->
+                <input type="file" (change)="capturarFile($event)" >
+            <!-- </mat-form-field> -->
 
         <div class="botones">
             <button id="button" mat-raised-button color="primary" type="submit" [disabled]="productoForm.invalid "

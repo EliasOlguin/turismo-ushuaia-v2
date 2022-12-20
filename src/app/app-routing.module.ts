@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
 import { ProductosInfoComponent } from './pages/administrador/productos-info/productos-info.component';
 import { HomeAdministradorComponent } from './pages/administrador/home-administrador/home-administrador.component';
+import { UsuariosInfoComponent } from './pages/administrador/usuarios-info/usuarios-info.component';
 
 const routes: Routes = [
   {
@@ -41,21 +42,29 @@ const routes: Routes = [
     component: AdministradorComponent,
     children: [
       {
-        path: '',
-        redirectTo: 'administrador/home',
-        pathMatch: 'full',
-      },
-      {
         path: 'home',
         component: HomeAdministradorComponent,
         loadChildren: () =>
-          import('./pages/administrador/home-administrador/home-administrador.module').then((m)=>m.HomeAdministradorModule)
+        import('./pages/administrador/home-administrador/home-administrador.module').then((m)=>m.HomeAdministradorModule)
       },
       {
         path: 'excursiones',
         component: ProductosInfoComponent,
         loadChildren: () =>
-          import('./pages/administrador/productos-info/productos-info.module').then((m)=>m.ProductosInfoModule)
+        import('./pages/administrador/productos-info/productos-info.module').then((m)=>m.ProductosInfoModule)
+      },
+      {
+        path: 'usuarios',
+        component: UsuariosInfoComponent,
+        loadChildren: () =>
+        import('./pages/administrador/usuarios-info/usuarios-info.module').then((m)=>m.UsuariosInfoModule)
+      },
+      {
+        path: '',
+        component: HomeAdministradorComponent,
+        loadChildren: () =>
+        import('./pages/administrador/home-administrador/home-administrador.module').then((m)=>m.HomeAdministradorModule)
+      
       },
     ],
   },

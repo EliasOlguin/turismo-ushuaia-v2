@@ -11,9 +11,11 @@ import { IProducto } from 'src/app/interfaces/IProducto';
 export class ProductoFormComponent implements OnInit {
 
   productoForm! : FormGroup
-  title = 'PRODUCTO'
+  title = 'EXCURSIÓN'
   createMode :boolean = false;
   producto! : IProducto;
+  horarios :string[] = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00']
+  archivo: any 
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,6 +33,12 @@ export class ProductoFormComponent implements OnInit {
     this.productoForm = this.formBuilder.group({
       nombre: new FormControl('',[Validators.required]),
       detalle: new FormControl('',[Validators.required]),
+      descripcion: new FormControl('',[Validators.required]),
+      tipo: new FormControl('',[Validators.required]),
+      cantidadPersonas: new FormControl('',[Validators.required]),
+      precio: new FormControl('',[Validators.required]),
+      horarios: new FormControl('',[Validators.required]),
+      dificultad: new FormControl('',[Validators.required]),
       // telefono: new FormControl('',[Validators.required]),
     })
 
@@ -41,5 +49,11 @@ export class ProductoFormComponent implements OnInit {
 
   agregarProducto(){
     
+  }
+
+  capturarFile(event:any):any{
+    const archivoCapturado = event.target.files[0];
+    this.archivo = archivoCapturado
+    console.log(event.target.files)
   }
 }

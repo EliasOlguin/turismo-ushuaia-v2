@@ -1,0 +1,68 @@
+<mat-dialog-content>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span>AGREGAR {{title}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="container-form py-3">
+
+        <form [formGroup]="usuarioForm">
+            <div class="container-form-datos col-12 p-0">
+                <mat-form-field class="example-full-width  col-xs-12 col-md-6">
+                    <mat-label>Nombre</mat-label>
+                    <input type="nombre" formControlName="nombre" matInput required placeholder="Nombre">
+                    <mat-error *ngIf="usuarioForm?.get('nombre')?.errors?.['required']"> Se requiere el
+                        nombre</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Apellido</mat-label>
+                    <input type="apellido" matInput formControlName="apellido" placeholder="Apellido">
+                    <mat-error *ngIf="usuarioForm?.get('apellido')?.errors?.['required']"> Se requiere un
+                        apellido</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password" placeholder="Password">
+                    <mat-error *ngIf="usuarioForm?.get('password')?.errors?.['required']"> Se requiere una
+                        password</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>Teléfono</mat-label>
+                    <input type="telefono" matInput formControlName="telefono" placeholder="Teléfono">
+                    <mat-error *ngIf="usuarioForm?.get('telefono')?.errors?.['required']"> Se requiere un
+                        telefono</mat-error>
+                </mat-form-field><mat-form-field class="example-full-width col-xs-12 col-md-6">
+                    <mat-label>email</mat-label>
+                    <input type="email" matInput formControlName="email"
+                        placeholder="email">
+                    <mat-error *ngIf="usuarioForm?.get('email')?.errors?.['required']"> Se requiere una
+                        email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Seleccionar un rol</mat-label>
+                    <mat-select [(value)]="rolSelected">
+                        
+                      <mat-option *ngFor="let rol of listaRol; let i = index" value={{rol}}>{{rol.nombre}}</mat-option>
+                      
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-error *ngIf="usuarioForm?.get('rol')?.errors?.['required']"> Se requiere una
+                    email</mat-error>
+                </div>
+            </form>
+            <!-- <mat-form-field class="example-full-width col-xs-12 col-md-6"> -->
+                <!-- <input type="file" (change)="capturarFile($event)" > -->
+            <!-- </mat-form-field> -->
+
+        <div class="botones">
+            <button id="button" mat-raised-button color="primary" type="submit" (click)="agregarUsuario()" [disabled]="usuarioForm.invalid "
+                class="mx-3">
+                <mat-icon>save</mat-icon>Guardar
+            </button>
+            <button id="button" mat-raised-button color="warn" [mat-dialog-close]="false" class="mx-3">
+                <mat-icon>close</mat-icon>Cancelar
+            </button>
+        </div>
+    </div>
+</mat-dialog-content>

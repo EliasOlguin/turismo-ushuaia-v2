@@ -1,3 +1,4 @@
+
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { IProducto } from 'src/app/interfaces/IProducto';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
@@ -5,29 +6,19 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductoService } from 'src/app/services/producto.service';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { ProductoFormComponent } from './producto-form/producto-form.component';
+import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { IUsuario } from 'src/app/interfaces/IUsuario';
 
-const ELEMENT_DATA: IProducto[] = [
-  {id: 1, nombre: 'Hydrogen', detalle: 'H'},
-  {id: 2, nombre: 'Helium', detalle: 'He'},
-  {id: 3, nombre: 'Lithium', detalle: 'Li'},
-  {id: 4, nombre: 'Beryllium', detalle: 'Be'},
-  {id: 5, nombre: 'Boron', detalle: 'B'},
-  {id: 6, nombre: 'Carbon',  detalle: 'C'},
-  {id: 7, nombre: 'Nitrogen',  detalle: 'N'},
-  {id: 8, nombre: 'Oxygen',  detalle: 'O'},
-  {id: 9, nombre: 'Fluorine',  detalle: 'F'},
-  {id: 10, nombre: 'Neon',  detalle: 'Ne'},
-];
 
 @Component({
-  selector: 'app-productos-info',
-  templateUrl: './productos-info.component.html',
-  styleUrls: ['./productos-info.component.css']
+  selector: 'app-usuarios-info',
+  templateUrl: './usuarios-info.component.html',
+  styleUrls: ['./usuarios-info.component.css']
 })
-export class ProductosInfoComponent implements OnInit{
+export class UsuariosInfoComponent implements OnInit {
 
-  displayedColumns: string[] = ['nombre', 'detalle','actions'];
+  displayedColumns: string[] = ['nombre','apellido','telefono','email','rol','actions'];
   exampleDatabase!: any
   data: any[] = [];
 
@@ -42,14 +33,14 @@ export class ProductosInfoComponent implements OnInit{
 
 
 
-  listaProductos : IProducto[] = []
+  listaUsuarios : IUsuario[] = []
 
   
   dataSource = new MatTableDataSource<IProducto>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  @ViewChild(ProductoFormComponent) childForm! : ProductoFormComponent;
+  @ViewChild(UsuarioFormComponent) childForm! : UsuarioFormComponent;
   config : MatDialogConfig = {
     autoFocus: false,
     width: "auto",
@@ -58,7 +49,7 @@ export class ProductosInfoComponent implements OnInit{
   }
 
   constructor(
-    private productoSrv: ProductoService,
+    private usuarioSrv : UsuarioService,
     private dialog: MatDialog,
   ) {}
 
@@ -69,13 +60,12 @@ export class ProductosInfoComponent implements OnInit{
   async getExcursiones(){
     try{
       this.isLoadingResults = true
-      // const response = await this.excursionSrv.getAll();
-      const response = ELEMENT_DATA
-      this.listaProductos = response
-      this.pageSlice = this.listaProductos.slice(0,10)
+      const response = await this.usuarioSrv.getAllUsuarios();
+      this.listaUsuarios = response
+      this.pageSlice = this.listaUsuarios.slice(0,10)
       console.log(this.pageSlice)
       this.dataSource = new MatTableDataSource<IProducto>(this.pageSlice);
-      this.resultsLength = this.listaProductos.length
+      this.resultsLength = this.listaUsuarios.length
       this.isLoadingResults = false
     }catch(error){
       this.isLoadingResults = false
@@ -86,10 +76,10 @@ export class ProductosInfoComponent implements OnInit{
   handlePageEvent(e : PageEvent){
     const starIndex = e.pageIndex * e.pageSize
     let endIndex = starIndex + e.pageSize
-    if (endIndex > this.listaProductos.length){
-      endIndex = this.listaProductos.length
+    if (endIndex > this.listaUsuarios.length){
+      endIndex = this.listaUsuarios.length
     }
-    this.pageSlice = this.listaProductos.slice(starIndex, endIndex)
+    this.pageSlice = this.listaUsuarios.slice(starIndex, endIndex)
   }
 
   clickEdit(productoId:number){
@@ -102,7 +92,7 @@ export class ProductosInfoComponent implements OnInit{
 
   async openDialog(){
     this.config.data = {createMode: true}
-    const addDialogRef = this.dialog.open(ProductoFormComponent,this.config);
+    const addDialogRef = this.dialog.open(UsuarioFormComponent,this.config);
     const addResponse = await addDialogRef.afterClosed().toPromise();
     if (addResponse) {
       this.getExcursiones();
