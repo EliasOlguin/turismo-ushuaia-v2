@@ -1,4 +1,36 @@
-<div>
-  <h1>404 Error</h1>
-  <h1>Page Not Found</h1>
+<div class="box" [ngClass]="clase">
+  <div class="box__ghost">
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+
+    <div class="box__ghost-container">
+      <div class="box__ghost-eyes">
+        <div class="box__eye-left"></div>
+        <div class="box__eye-right"></div>
+      </div>
+      <div class="box__ghost-bottom">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="box__ghost-shadow"></div>
+  </div>
+
+  <div class="box__description">
+    <div class="box__description-container">
+      <div class="box__description-title">Oops!</div>
+      <div class="box__description-text">
+        Parece que te equivocaste de ruta, vuelve al camino!
+      </div>
+    </div>
+
+    <a href="main/home" class="box__button">Camino</a>
+  </div>
 </div>
